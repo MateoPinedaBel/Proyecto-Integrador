@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro - Viaje a Marte</title>
+    <style>
+        :root {
+            --rojo-marte: #d64000;
+            --naranja-brillo: #ffae42;
+            --fondo: #1a0d0d;
+            --fondo-formulario: rgba(39, 14, 14, 0.95);
+            --input-bg: #2e1a1a;
+            --texto: #fbe8d3;
+            --borde-suave: 12px;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: url('Imagenes/Estrellas.gif') no-repeat center top;
+            background-attachment: scroll;
+            background-size: cover;
+            color: var(--texto);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .registro {
+            background-color: var(--fondo-formulario);
+            border-radius: var(--borde-suave);
+            padding: 30px;
+            box-shadow: 0 0 25px var(--rojo-marte);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--naranja-brillo);
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px var(--rojo-marte);
+        }
+
+        label {
+            display: block;
+            margin: 14px 0 6px;
+            font-weight: bold;
+            color: var(--naranja-brillo);
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: var(--borde-suave);
+            border: none;
+            background-color: var(--input-bg);
+            color: var(--texto);
+            font-size: 1em;
+            box-shadow: inset 0 0 6px rgba(255, 165, 0, 0.15);
+        }
+
+
+        input::placeholder {
+            color: #c99;
+        }
+
+
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+
+        a {
+            color: var(--naranja-brillo);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: var(--borde-suave);
+            background-color: var(--rojo-marte);
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(214, 64, 0, 0.6);
+        }
+
+        button:hover {
+            background-color: #b73200;
+            box-shadow: 0 0 16px rgba(255, 87, 34, 0.9);
+        }
+
+        @media (max-width: 480px) {
+            .registro {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="registro">
+        <h1>Formulario de Registro: Viaje a Marte</h1>
+        <form onsubmit="return validarFormulario()">
+            <label for="tipoID">Tipo de documento:</label>
+            <select id="tipoID" required>
+                <option value="">Selecciona una opción</option>
+                <option value="CC">Cédula de ciudadanía</option>
+                <option value="TI">Tarjeta de identidad</option>
+                <option value="CE">Cédula de extranjería</option>
+            </select>
+
+            <label for="numeroID">Número de identificación:</label>
+            <input type="text" id="numeroID" minlength="10" maxlength="10" placeholder="1234567890" required>
+
+            <label for="primerNombre">Primer nombre:</label>
+            <input type="text" id="primerNombre" maxlength="65" placeholder="Solo primer nombre" required>
+
+            <label for="segundoNombre">Segundo nombre:</label>
+            <input type="text" id="segundoNombre" maxlength="65" placeholder="Opcional">
+
+            <label for="primerApellido">Primer apellido:</label>
+            <input type="text" id="primerApellido" maxlength="65" required>
+
+            <label for="segundoApellido">Segundo apellido:</label>
+            <input type="text" id="segundoApellido" maxlength="65">
+
+            <label for="fechaNacimiento">Fecha de nacimiento:</label>
+            <input type="date" id="fechaNacimiento" required>
+
+            <label for="pais">País:</label>
+            <select id="pais" required>
+                <option value="">Selecciona tu país</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Panama">Panamá</option>
+            </select>
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" id="correo" placeholder="ejemplo@ejemplo.com" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" maxlength="10" placeholder="3205555555" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" minlength="8" maxlength="10" placeholder="ejemplo04*." required>
+
+            <label>
+                <input type="checkbox" id="terminos" required>
+                Acepto los <a href="Riesgos, terminos y condiciones.html" target="_blank">riesgos, términos y
+                    condiciones</a>
+            </label>
+
+            <div class="botones">
+                <button type="reset">Limpiar</button>
+                <button type="submit">Enviar</button>
+                <button type="button" onclick="window.location.href='datos_Aspirantes.html'">Rellenar
+                    cuestionario</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validarFormulario() {
+            const numeroID = document.getElementById("numeroID").value;
+            const telefono = document.getElementById("telefono").value;
+
+            if (!/^\d{10}$/.test(numeroID)) {
+                alert("El número de identificación debe tener 10 dígitos numéricos.");
+                return false;
+            }
+
+            if (!/^\d{10}$/.test(telefono)) {
+                alert("El número de teléfono debe tener 10 dígitos numéricos.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+    <script src="registro.js"></script>
+</body>
+
+</html>

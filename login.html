@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in Aspirantes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('Imagenes/Estrellas.gif') center top repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background: rgba(30, 10, 0, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 100, 0, 0.6);
+            color: #ffdca8;
+            width: 90%;
+            max-width: 420px;
+            backdrop-filter: blur(4px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff8c00;
+            text-shadow: 0 0 12px #ff4500;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #ffb347;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: #2e1a12;
+            color: #fff3e0;
+            outline: 1px solid #ff6f00;
+        }
+
+        input::placeholder {
+            color: #ffcc80;
+        }
+
+        a {
+            color: #ffa726;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #ff5722;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: var(--borde-suave);
+            background-color: #b73200;
+            /* mismo color que en hover */
+            color: white;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-right: 12px;
+            margin-top: 10px;
+            box-shadow: 0 0 16px rgba(255, 87, 34, 0.9);
+            /* mismo shadow que en hover */
+        }
+
+
+        button:hover {
+            background-color: #b73200;
+            box-shadow: 0 0 16px rgb(255, 86, 34);
+        }
+
+        p {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #ffd180;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Inicio de sesión</h1>
+        <form>
+            <p>Ingresa tu correo electrónico y tu contraseña:</p>
+
+            <label for="Correo">Correo electrónico:</label>
+            <input type="email" id="Correo" placeholder="ejemplo@ejemplo.com" required />
+
+            <label for="Contraseña">Contraseña:</label>
+            <input type="password" id="Contraseña" minlength="8" maxlength="10" placeholder="ejemplo04*." required />
+
+            <p>¿No tienes una cuenta aún?</p>
+            <a href="index.html" target="_blank">Crea una.</a>
+            <br /><br />
+
+            <button type="submit">Enviar</button>
+            <button type="button" onclick="window.location.href='registro.html'">Registrarse</button>
+            <button type="button" onclick="window.location.href='index.html'">Inicio</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("¡Bienvenido al módulo marciano! Tu viaje está a punto de comenzar... 🪐");
+        });
+    </script>
+</body>
+
+</html>
