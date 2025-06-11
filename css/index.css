@@ -16,7 +16,7 @@ body {
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: url('Imagenes/marte-girando.webp') center top repeat-y;
+    background: url('/Imagenes/marte-girando.webp') center top repeat-y;
     background-size: 100% auto;
     color: var(--gris-claro, #f1f1f1);
     backdrop-filter: brightness(0.6);

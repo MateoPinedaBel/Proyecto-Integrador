@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('Imagenes/Estrellas.gif') center top repeat;
+    background: url('/Imagenes/Estrellas.gif') center top repeat;
     background-size: cover;
     background-attachment: fixed;
     display: flex;
