@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datos Aspirantes - Viaje a Marte</title>
-    <link rel="stylesheet" href="datos.css">
+    <link rel="stylesheet" href="css/datos.css">
 </head>
 
 <body>
-
     <div class="datos">
         <h1>Cuestionario de Salud y Perfil</h1>
-        <form onsubmit="return validarDatos()">
+        <form>
             <label for="Cardio">¿Tiene alguna enfermedad cardiovascular diagnosticada?</label>
             <select id="Cardio" required>
                 <option value="" selected disabled>Seleccione una opción</option>
@@ -90,25 +89,7 @@
         </form>
     </div>
 
-    <script>
-        function mostrarCampoOtro(select) {
-            const campo = document.getElementById("campoOtro");
-            campo.style.display = (select.value === "Otro") ? "block" : "none";
-        }
-
-        function validarDatos() {
-            const educacion = document.getElementById("Educacion").value;
-            const otroCampo = document.getElementById("OtroEducacion").value;
-
-            if (educacion === "Otro" && otroCampo.trim() === "") {
-                alert("Por favor, especifica tu nivel educativo.");
-                return false;
-            }
-
-            return true;
-        }
-    </script>
-    <script src="formulario_salud.js"></script>
+    <script src="javascript/formulario_salud.js"></script>
 </body>
 
 </html>

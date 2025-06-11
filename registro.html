@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro - Viaje a Marte</title>
-    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="css/registro.css">
 </head>
 
 <body>
@@ -66,32 +66,14 @@
             <div class="botones">
                 <button type="reset">Limpiar</button>
                 <button type="submit">Enviar</button>
-                <button type="button" onclick="window.location.href='datos_Aspirantes.html'">Rellenar
-                    cuestionario</button>
+                <button type="button" onclick="window.location.href='datos_Aspirantes.html'">Rellenar cuestionario</button>
                 <button type="button" onclick="window.location.href='index.html'">Volver a Inicio</button>
             </div>
         </form>
     </div>
 
-    <script>
-        function validarFormulario() {
-            const numeroID = document.getElementById("numeroID").value;
-            const telefono = document.getElementById("telefono").value;
-
-            if (!/^\d{10}$/.test(numeroID)) {
-                alert("El número de identificación debe tener 10 dígitos numéricos.");
-                return false;
-            }
-
-            if (!/^\d{10}$/.test(telefono)) {
-                alert("El número de teléfono debe tener 10 dígitos numéricos.");
-                return false;
-            }
-
-            return true;
-        }
-    </script>
-    <script src="registro.js"></script>
+    <script src="javascript/registro.js"></script>
+    <script src="javascript/registrojs.js"></script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva tu viaje a Marte</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
@@ -90,8 +90,7 @@
         </div>
 
         <h2 class="fade-in">Preparación para el Viaje</h2>
-        <p class="fade-in">Incluye entrenamiento físico, psicológico y de supervivencia espacial. Obligatorios y tienen una duración de 1 año.”
-        </p>
+        <p class="fade-in">Incluye entrenamiento físico, psicológico y de supervivencia espacial. Obligatorios y tienen una duración de 1 año.”</p>
         <img src="Imagenes/MartianGym.jpg" alt="Entrenamiento en Marte" class="fade-in">
 
         <h2 class="fade-in">Cumple el sueño de tu niño interior</h2>
@@ -107,20 +106,7 @@
         </p>
     </div>
 
-    <script>
-        const faders = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        faders.forEach(el => observer.observe(el));
-    </script>
+    <script src="javascript/index.js"></script>
 </body>
 
 </html>

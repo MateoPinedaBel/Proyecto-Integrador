@@ -33,7 +33,7 @@ async function validarDatos(event) {
         });
 
         const resultado = await response.json();
-        alert(resultado.message); // Muestra respuesta del servidor
+        alert(resultado.message || "Datos enviados con éxito. 🚀");
     } catch (error) {
         console.error("Error al enviar los datos:", error);
         alert("Ocurrió un error al enviar los datos. 😢");
