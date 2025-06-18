@@ -204,6 +204,71 @@ Ref: perfil.id_nivel_ingles > nivel_ingles.id_nivel_ingles
 
 ---
 
+🏗️ Elementos usados
+
+1. PRIMARY KEY (PK) 🔑
+
+¿Qué hace?: Identifica de forma única cada fila de una tabla.
+
+Ejemplo en el script:
+
+[id_aspirante] integer PRIMARY KEY NOT NULL IDENTITY(1, 1)
+
+Aquí, id_aspirante es la clave primaria de la tabla aspirantes. No puede haber dos aspirantes con el mismo ID.
+
+2. FOREIGN KEY (FK) 🌐
+
+¿Qué hace?: Crea una relación entre tablas, asegurando que el valor exista en otra tabla (integridad referencial).
+
+Ejemplo:
+
+ALTER TABLE [aspirantes] ADD FOREIGN KEY ([id_tipo_documento]) REFERENCES [tipo_documento] ([id_tipo_documento])
+
+Esto indica que id_tipo_documento en aspirantes debe coincidir con un id_tipo_documento existente en la tabla tipo_documento.
+
+3. UNIQUE 🔒
+
+¿Qué hace?: Evita que se repitan los valores en una columna específica.
+
+Ejemplo:
+
+[correo] varchar(100) UNIQUE NOT NULL
+
+Asegura que ningún aspirante pueda tener el mismo correo electrónico que otro. Ideal para campos como número de cédula o email.
+
+4. IDENTITY(1,1) 🆔
+
+¿Qué hace?: Genera valores autoincrementales.
+
+(1,1) significa: empieza desde 1 y aumenta de 1 en 1.
+
+Ejemplo:
+
+[id_salud] integer PRIMARY KEY NOT NULL IDENTITY(1, 1)
+
+Así, cuando insertes un nuevo registro en salud, SQL Server automáticamente asignará el siguiente número consecutivo como ID.
+
+5. NOT NULL (NN) 🚫
+
+¿Qué hace?: Obliga a que el campo no pueda estar vacío (nulo).
+
+Ejemplo:
+
+[primer_nombre] varchar(65) NOT NULL
+
+Esto significa que si no se especifica un primer nombre, la fila no se inserta.
+
+6. GO 🏁
+
+¿Qué hace?: Es una instrucción específica de SQL Server para indicar el fin de un bloque de instrucciones.
+
+Ejemplo:
+
+CREATE TABLE [aspirantes] (...);
+GO
+
+SQL Server ejecuta el bloque hasta GO y luego continúa con el siguiente. Es útil para separar instrucciones cuando creas muchas tablas o haces alteraciones.
+
 ## ✅ Notas
 
 - Base de datos en **Tercera Forma Normal (3FN)**: sin redundancias, dependencias funcionales completas y relaciones adecuadas.
